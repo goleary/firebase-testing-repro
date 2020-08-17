@@ -14,7 +14,7 @@ export const helloWorld = functions.https.onRequest(
     const postSnap = await firebase
       .firestore()
       .collection("posts")
-      .withConverter(postConverter)
+      .withConverter(postConverter) // This line result in an error
       .doc()
       .get();
     const post = postSnap.data();
